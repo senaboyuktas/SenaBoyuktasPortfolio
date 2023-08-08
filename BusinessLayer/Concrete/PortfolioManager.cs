@@ -21,12 +21,12 @@ namespace BusinessLayer.Concrete
 
         public void TAdd(Portfolio t)
         {
-            throw new NotImplementedException();
+            _portfolioDal.Insert(t);
         }
 
         public void TDelete(Portfolio t)
         {
-            throw new NotImplementedException();
+            _portfolioDal.Delete(t);
         }
 
         public Portfolio TGetByID(int id)
@@ -41,7 +41,7 @@ namespace BusinessLayer.Concrete
 
         public void TUpdate(Portfolio t)
         {
-            throw new NotImplementedException();
+            _portfolioDal.Update(t);
         }
     }
 }

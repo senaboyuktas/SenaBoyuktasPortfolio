@@ -20,12 +20,12 @@ namespace BusinessLayer.Concrete
 
         public void TAdd(Skill t)
         {
-            throw new NotImplementedException();
+            _skillDal.Insert(t);
         }
 
         public void TDelete(Skill t)
         {
-            throw new NotImplementedException();
+            _skillDal.Delete(t);
         }
 
         public Skill TGetByID(int id)
@@ -40,7 +40,7 @@ namespace BusinessLayer.Concrete
 
         public void TUpdate(Skill t)
         {
-            throw new NotImplementedException();
+            _skillDal.Update(t);
         }
     }
 }
