@@ -20,17 +20,17 @@ namespace BusinessLayer.Concrete
 
         public void TAdd(Contact t)
         {
-            throw new NotImplementedException();
+            _contactDal.Insert(t);
         }
 
         public void TDelete(Contact t)
         {
-            throw new NotImplementedException();
+            _contactDal.Delete(t);
         }
 
         public Contact TGetByID(int id)
         {
-            throw new NotImplementedException();
+            return _contactDal.GetByID(id);
         }
 
         public List<Contact> TGetList()
@@ -38,9 +38,14 @@ namespace BusinessLayer.Concrete
             return _contactDal.GetList();
         }
 
-        public void TUpdate(Contact t)
+        public List<Contact> TGetListByFilter()
         {
             throw new NotImplementedException();
+        }
+
+        public void TUpdate(Contact t)
+        {
+            _contactDal.Update(t);
         }
     }
 }

@@ -20,12 +20,12 @@ namespace BusinessLayer.Concrete
 
         public void TAdd(Testimonial t)
         {
-            throw new NotImplementedException();
+            _testimonialDal.Insert(t);
         }
 
         public void TDelete(Testimonial t)
         {
-            throw new NotImplementedException();
+            _testimonialDal.Delete(t);
         }
 
         public Testimonial TGetByID(int id)
@@ -38,9 +38,14 @@ namespace BusinessLayer.Concrete
             return _testimonialDal.GetList();
         }
 
-        public void TUpdate(Testimonial t)
+        public List<Testimonial> TGetListByFilter()
         {
             throw new NotImplementedException();
+        }
+
+        public void TUpdate(Testimonial t)
+        {
+            _testimonialDal.Update(t);
         }
     }
 }
