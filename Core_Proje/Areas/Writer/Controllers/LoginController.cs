@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 namespace Core_Proje.Areas.Writer.Controllers
 {
     [Area("Writer")]
-    //[Route("Writer/[controller]/[action]")]
-    //[AllowAnonymous]
+    [Route("Writer/[controller]/[action]")]
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         private readonly SignInManager<WriterUser> _signInManager;
@@ -31,7 +31,8 @@ namespace Core_Proje.Areas.Writer.Controllers
                 var result = await _signInManager.PasswordSignInAsync(p.Username, p.Password, true, true);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("/ Writer / Profile / Index");
+                    return LocalRedirect("/Writer/Profile/Index");
+                    //return RedirectToAction("Index", "Home");
                 }
                 else
                 {
