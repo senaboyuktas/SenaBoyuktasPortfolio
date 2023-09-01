@@ -9,7 +9,7 @@ using System.Data;
 
 namespace Core_Proje.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class ContactInfoController : Controller
     {
         ContactManager contactManager = new ContactManager(new EfContactDal());

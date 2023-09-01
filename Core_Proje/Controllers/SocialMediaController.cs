@@ -7,7 +7,7 @@ using System.Data;
 
 namespace Core_Proje.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class SocialMediaController : Controller
     {
         SocialMediaManager socialMediaManager = new SocialMediaManager(new EfSocialMediaDal());

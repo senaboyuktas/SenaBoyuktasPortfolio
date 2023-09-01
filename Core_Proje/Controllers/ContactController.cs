@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Core_Proje.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class ContactController : Controller
     {
         MessageManager messageManager = new MessageManager(new EfMessageDal());

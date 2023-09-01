@@ -7,7 +7,7 @@ using System.Data;
 
 namespace Core_Proje.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class TestimonialController : Controller
     {
         TestimonialManager testimoanialManager = new TestimonialManager(new EfTestimonialDal());
