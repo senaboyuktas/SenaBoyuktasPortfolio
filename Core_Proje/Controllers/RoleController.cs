@@ -100,7 +100,7 @@ namespace Core_Proje.Controllers
             ViewBag.V1 = "Kişiler";
             ViewBag.V2 = "Kişi Listesi";
             ViewBag.V3 = "";
-            ViewBag.V2URL = "/UserList/Index/";
+            ViewBag.V2URL = "/Role/UserList/";
 
             var values = _userManager.Users.ToList();
             return View(values);

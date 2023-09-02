@@ -23,6 +23,7 @@
                             <th scope="col" class="sort" data-sort="budget">Konu</th>
                             <th scope="col" class="sort" data-sort="status">Tarih</th>
                             <th scope="col"></th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody class="list">
@@ -48,17 +49,8 @@
                                         <span class="status">@(((DateTime)item.Date).ToString("dd MMMM yyyy"))</span>
                                     </span>
                                 </td>
-                                <td class="text-right">
-                                    <div class="dropdown">
-                                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                            <a class="dropdown-item" href="/AdminMessage/AdminMessageDetailI/@item.ID"><i class="fas fa-pen mx-0"></i> Detay</a>
-                                            <a class="dropdown-item" href="/AdminMessage/DeleteAdminMessage/@item.ID"><i class="fas fa-trash mx-0"></i> Sil</a>
-                                        </div>
-                                    </div>
-                                </td>
+                                <td><a href="/AdminMessage/DeleteAdminMessage/@item.ID" class="btn btn-danger">Sil</a></td>
+                                <td><a href="/AdminMessage/AdminMessageDetailI/@item.ID" class="btn btn-outline-primary">Detay</a></td>
                             </tr>
                         }
                     </tbody>

@@ -18,7 +18,7 @@ namespace Core_Proje.Controllers
             ViewBag.V1 = "İletişim Bilgileri Güncelleme";
             ViewBag.V2 = "İletişim Bilgileri";
             ViewBag.V3 = "İletişim Bilgileri Güncelleme";
-            ViewBag.V2URL = "/Contact/Index/";
+            ViewBag.V2URL = "/ContactInfo/Index/";
 
             var values = contactManager.TGetByID(1);
             return View(values);

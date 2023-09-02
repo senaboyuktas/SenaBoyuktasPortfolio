@@ -46,7 +46,7 @@ namespace Core_Proje.Controllers
             ViewBag.V1 = "Yeni Mesaj Gönderme Formu";
             ViewBag.V2 = "Mesaj Listesi";
             ViewBag.V3 = "Yeni Mesaj Gönderme Formu";
-            ViewBag.V2URL = "/AdminMessage/Sendbox/";
+            ViewBag.V2URL = "/AdminMessage/Inbox/";
 
             return View();
         }

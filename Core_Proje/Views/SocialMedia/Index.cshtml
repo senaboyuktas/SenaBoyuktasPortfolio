@@ -21,6 +21,7 @@
                             <th scope="col" class="sort" data-sort="name">İkon</th>
                             <th scope="col" class="sort" data-sort="budget">Url</th>
                             <th scope="col"></th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody class="list">
@@ -40,23 +41,13 @@
                                 <td class="budget">
                                     @item.Url
                                 </td>
-
-                                <td class="text-right">
-                                    <div class="dropdown">
-                                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                            <a class="dropdown-item" href="/SocialMedia/EditSocialMedia/@item.SocialMediaID"><i class="fas fa-pen mx-0"></i> Güncelle</a>
-                                            <a class="dropdown-item" href="/SocialMedia/DeleteSocialMedia/@item.SocialMediaID"><i class="fas fa-trash  mx-0"></i> Sil</a>
-                                        </div>
-                                    </div>
-                                </td>
+                                <td><a href="/SocialMedia/DeleteSocialMedia/@item.SocialMediaID" class="btn btn-danger">Sil</a></td>
+                                <td><a href="/SocialMedia/EditSocialMedia/@item.SocialMediaID" class="btn btn-info">Güncelle</a></td>
                             </tr>
                         }
                     </tbody>
                 </table>
-                <a href="/SocialMedia/AddSocialMedia" class="btn btn-outline-primary col-12">Yeni Sosyal Medya Ekle!</a>
+                <a href="/SocialMedia/AddSocialMedia" class="btn btn-outline-primary col-12">Yeni Sosyal Medya Ekle</a>
             </div>
         </div>
     </div>

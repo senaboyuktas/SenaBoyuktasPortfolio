@@ -31,6 +31,11 @@ namespace Core_Proje.Controllers
 
         public IActionResult ContactDetail(int id)
         {
+            ViewBag.V1 = "Mesajlarım";
+            ViewBag.V2 = "Mesaj Listesi";
+            ViewBag.V3 = "Mesaj Detayı";
+            ViewBag.V2URL = "/Contact/Index/";
+
             var values = messageManager.TGetByID(id);
             return View(values);
         }
