@@ -7,7 +7,7 @@ namespace Core_Proje_Api.DAL.ApiContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=(localdb)\\MSSQLLocalDB; database=CoreProjeApiDB; integrated security=true;");
+            optionsBuilder.UseSqlServer("server=(localdb)\\MSSQLLocalDB; database=SenaBoyuktasPortfolioApiDB; integrated security=true;");
         }
 
         public DbSet<Category> Categories { get; set; }

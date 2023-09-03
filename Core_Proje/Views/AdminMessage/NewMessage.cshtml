@@ -25,18 +25,21 @@
                         <div class="form-group">
                             <label class="form-control-label" for="input-email">Alıcı Mail</label>
                             <input type="email" class="form-control" asp-for="Receiver" placeholder="Alıcının mail bilgisini giriniz.">
+                            <span asp-validation-for="Receiver" class="text-danger  field"></span>
                         </div>
                     </div>
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label" for="input-email">Konu</label>
                             <input type="text" class="form-control" asp-for="Subject" placeholder="Mesaj konusunu giriniz.">
+                            <span asp-validation-for="Subject" class="text-danger  field"></span>
                         </div>
                     </div>
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label" for="input-email">İçerik</label>
                             <textarea rows="5" class="form-control" asp-for="Content" placeholder="Mesaj içeriğini giriniz."></textarea>
+                            <span asp-validation-for="Content" class="text-danger  field"></span>
                         </div>
                     </div>
                 </div>

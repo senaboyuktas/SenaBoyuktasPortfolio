@@ -39,6 +39,11 @@ namespace Core_Proje.Controllers
         [HttpPost]
         public IActionResult AddService(Service service)
         {
+            ViewBag.V1 = "Yeni Hizmet Ekleme";
+            ViewBag.V2 = "Hizmet Listesi";
+            ViewBag.V3 = "Yeni Hizmet Ekleme";
+            ViewBag.V2URL = "/Service/Index/";
+
             ServiceValidator validations = new ServiceValidator();
             ValidationResult result = validations.Validate(service);
 
@@ -79,6 +84,11 @@ namespace Core_Proje.Controllers
         [HttpPost]
         public IActionResult EditService(Service service)
         {
+            ViewBag.V1 = "Hizmet Güncelleme";
+            ViewBag.V2 = "Hizmet Listesi";
+            ViewBag.V3 = "Hizmet Güncelleme";
+            ViewBag.V2URL = "/Service/Index/";
+
             ServiceValidator validations = new ServiceValidator();
             ValidationResult result = validations.Validate(service);
 

@@ -39,6 +39,11 @@ namespace Core_Proje.Controllers
         [HttpPost]
         public IActionResult AddPortfolio(Portfolio portfolio)
         {
+            ViewBag.V1 = "Yeni Proje Ekleme";
+            ViewBag.V2 = "Proje Listesi";
+            ViewBag.V3 = "Yeni Proje Ekleme";
+            ViewBag.V2URL = "/Portfolio/Index/";
+
             PortfolioValidator validations = new PortfolioValidator();
             ValidationResult result = validations.Validate(portfolio);
 
@@ -79,6 +84,11 @@ namespace Core_Proje.Controllers
         [HttpPost]
         public IActionResult EditPortfolio(Portfolio portfolio)
         {
+            ViewBag.V1 = "Proje Güncelleme";
+            ViewBag.V2 = "Proje Listesi";
+            ViewBag.V3 = "Proje Güncelleme";
+            ViewBag.V2URL = "/Portfolio/Index/";
+
             PortfolioValidator validations = new PortfolioValidator();
             ValidationResult result = validations.Validate(portfolio);
 

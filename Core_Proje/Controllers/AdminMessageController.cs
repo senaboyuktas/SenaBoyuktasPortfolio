@@ -1,4 +1,6 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
+using FluentValidation.Results;
 using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
@@ -54,6 +56,14 @@ namespace Core_Proje.Controllers
         [HttpPost]
         public IActionResult NewMessage(WriterMessage writerMessage)
         {
+            ViewBag.V1 = "Yeni Mesaj Gönderme Formu";
+            ViewBag.V2 = "Mesaj Listesi";
+            ViewBag.V3 = "Yeni Mesaj Gönderme Formu";
+            ViewBag.V2URL = "/AdminMessage/Inbox/";
+
+            AdminMessageValidator validations = new AdminMessageValidator();
+            ValidationResult result = validations.Validate(writerMessage);
+
             Context context = new Context();
             var usernamesurname = context.Users.Where(x => x.Email == writerMessage.Receiver).Select(y => y.Name + " " + y.Surname).FirstOrDefault();
 
@@ -62,15 +72,26 @@ namespace Core_Proje.Controllers
             writerMessage.SenderName = "Sena Boyuktaş";
             writerMessage.Date = DateTime.Now;
 
-            writerMessageManager.TAdd(writerMessage);
-            return RedirectToAction("Sendbox");
+            if (result.IsValid)
+            {
+                writerMessageManager.TAdd(writerMessage);
+                return RedirectToAction("Sendbox");
+            }
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();
         }
 
         public IActionResult DeleteAdminMessage(int id)
         {
             var values = writerMessageManager.TGetByID(id);
             writerMessageManager.TDelete(values);
-            return RedirectToAction("Inbox");
+            return RedirectToAction("Sendbox");
         }
 
         public IActionResult AdminMessageDetailI(int id)

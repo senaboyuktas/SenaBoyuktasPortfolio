@@ -28,6 +28,11 @@ namespace Core_Proje.Controllers
         [HttpPost]
         public IActionResult Index(About about)
         {
+            ViewBag.V1 = "Hakkımda Güncelleme";
+            ViewBag.V2 = "Hakkımda";
+            ViewBag.V3 = "Hakkımda Güncelleme";
+            ViewBag.V2URL = "/About/Index/";
+
             AboutValidator validations = new AboutValidator();
             ValidationResult result = validations.Validate(about);
 

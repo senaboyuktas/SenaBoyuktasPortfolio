@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using System;
 using System.Linq;
+using BusinessLayer.ValidationRules;
+using FluentValidation.Results;
 
 namespace Core_Proje.Areas.Writer.Controllers
 {
@@ -69,6 +71,9 @@ namespace Core_Proje.Areas.Writer.Controllers
         [HttpPost]
         public async Task<IActionResult> NewMessage(WriterMessage writerMessage)
         {
+            WriterMessageValidator validations = new WriterMessageValidator();
+            ValidationResult result = validations.Validate(writerMessage);
+
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
             writerMessage.Date = DateTime.Now;
             writerMessage.Sender = user.Email;
@@ -79,8 +84,19 @@ namespace Core_Proje.Areas.Writer.Controllers
 
             writerMessage.ReceiverName = usernamesurname;
 
-            writerMessageManager.TAdd(writerMessage);
-            return RedirectToAction("Sendbox");
+            if (result.IsValid)
+            {
+                writerMessageManager.TAdd(writerMessage);
+                return RedirectToAction("Sendbox");
+            }
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();
         }
     }
 }

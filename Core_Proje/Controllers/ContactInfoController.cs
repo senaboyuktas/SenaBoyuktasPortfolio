@@ -27,6 +27,11 @@ namespace Core_Proje.Controllers
         [HttpPost]
         public IActionResult Index(Contact contact)
         {
+            ViewBag.V1 = "İletişim Bilgileri Güncelleme";
+            ViewBag.V2 = "İletişim Bilgileri";
+            ViewBag.V3 = "İletişim Bilgileri Güncelleme";
+            ViewBag.V2URL = "/ContactInfo/Index/";
+
             ContactValidator validations = new ContactValidator();
             ValidationResult result = validations.Validate(contact);
 

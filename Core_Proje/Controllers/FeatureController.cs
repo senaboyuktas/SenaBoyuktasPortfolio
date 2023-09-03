@@ -28,6 +28,11 @@ namespace Core_Proje.Controllers
         [HttpPost]
         public IActionResult Index(Feature feature)
         {
+            ViewBag.V1 = "Öne Çıkan Güncelleme";
+            ViewBag.V2 = "Öne Çıkan";
+            ViewBag.V3 = "Öne Çıkan Güncelleme";
+            ViewBag.V2URL = "/Feature/Index/";
+
             FeatureValidator validations = new FeatureValidator();
             ValidationResult result = validations.Validate(feature);
 
