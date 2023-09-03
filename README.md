@@ -19,3 +19,5 @@ Bu proje, ASP.Net Core 5.0 kullanarak Entity Framework Core ve N Tier Architectu
 * Ajax kullanımı ve sayfa yenilemesi gerektirmeyen etkileşimler
 * Kimlik doğrulama ve yetkilendirme (Identity) sisteminin entegrasyonu
 * Rol tabanlı yetkilendirme işlemleri
+
+## Proje Görselleri
