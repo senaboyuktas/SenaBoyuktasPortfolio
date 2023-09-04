@@ -13,7 +13,7 @@ namespace DataAccessLayer.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=(localdb)\\MSSQLLocalDB; database=SenaBoyuktasPortfolioDB; integrated security=true;");
+            optionsBuilder.UseSqlServer("xxx");
         }
        
         public DbSet<About> Abouts { get; set; }
