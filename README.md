@@ -60,8 +60,8 @@ Bu proje, ASP.Net Core 5.0 kullanarak Entity Framework Core ve N Tier Architectu
 
 ![Admin](https://github.com/SenaBoyuktas/SenaBoyuktasPortfolio/blob/master/Proje/19.jpg)
 
-![Admin](https://github.com/EfrunEvdi/SenaBoyuktasPortfolio/blob/master/Proje/20.jpg)
+![Admin](https://github.com/SenaBoyuktas/SenaBoyuktasPortfolio/blob/master/Proje/20.jpg)
 
-![401](https://github.com/EfrunEvdi/SenaBoyuktasPortfolio/blob/master/Proje/21.jpg)
+![401](https://github.com/SenaBoyuktas/SenaBoyuktasPortfolio/blob/master/Proje/21.jpg)
 
-![404](https://github.com/EfrunEvdi/SenaBoyuktasPortfolio/blob/master/Proje/22.jpg)
+![404](https://github.com/SenaBoyuktas/SenaBoyuktasPortfolio/blob/master/Proje/22.jpg)
